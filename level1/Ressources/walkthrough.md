@@ -8,7 +8,7 @@ En ouvrant l'exécutable avec ghidra, nous voyons ca:
 - Une fonction run(qui n'est pas appelée), mais qui execute avec system "/bin/sh".
 - Une fonction main
 
-En regardant la fonction main, nous qu'elle utilise la fonction `gets`, qui contient une faille de sécurité, car elle ne vérifie pas la taille de l'input, et donc on peut faire un buffer overflow. Donc faire en sorte que après le main, au lieu de retourner normalement, il execute la fonction run.
+En regardant la fonction main, nous voyons qu'elle utilise la fonction `gets`, qui contient une faille de sécurité, car elle ne vérifie pas la taille de l'input, et donc on peut faire un buffer overflow. Donc faire en sorte que après le main, au lieu de retourner normalement, il execute la fonction run.
 
 Après quelques tests pour connaitre la taille du buffer, on voit qu'il est de 76, donc on va devoir mettre 76 caractères, puis l'adresse de la fonction run, qui est `0x08048444` en little endian.
 
