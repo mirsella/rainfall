@@ -1,7 +1,5 @@
 # Level 7
 
-## Premierement, testons le programme
-
 ```bash
 level7@RainFall:~$ ./level7
 Segmentation fault (core dumped)
