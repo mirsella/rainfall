@@ -1,6 +1,5 @@
-use std::env;
+use std::env::{args, var};
 
 fn main() {
-    let var: Vec<String> = env::args().collect();
-    println!("{}: {:p}", var[1], &env::var(&var[1]).unwrap());
+    println!("{}: {:p}", args().nth(1).unwrap(), &var(args().nth(1).unwrap()).unwrap());
 }
