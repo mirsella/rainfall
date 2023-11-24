@@ -7,7 +7,7 @@ char *p(char *buffer, char *prompt) {
   char b[4104];
   puts(prompt);
   read(0, b, 4096);
-  strchr(b, '\n')[0] = 0;
+  *strchr(b, '\n') = 0;
   return strncpy(buffer, b, 20);
 }
 
