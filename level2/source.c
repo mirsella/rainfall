@@ -1,10 +1,8 @@
 #include "stdlib.h"
 #include "string.h"
 #include <stdio.h>
-void p(void)
-
-{
-  char buffer[76];
+void p(void) {
+  char buffer[80];
 
   fflush(stdout);
   int retaddr = gets(buffer);
