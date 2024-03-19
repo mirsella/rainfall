@@ -3,7 +3,7 @@
 Nous avons acces a un executable, `level1`, en l'executant, nous voyons qu'il attends un input, mais quand on envoie un input, il ne renvoie rien.
 
 En ouvrant l'exécutable avec ghidra, nous voyons ca:
-![ghidra](ghidra.png)
+![ghidra](Ressources/ghidra.png)
 
 - Une fonction run(qui n'est pas appelée), mais qui execute avec system "/bin/sh".
 - Une fonction main
